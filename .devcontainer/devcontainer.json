@@ -2,14 +2,14 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
 	"name": "ubuntu",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
 
-  // Set *default* container specific settings.json values on container create.
-  //"settings": {
-  //  "terminal.integrated.shell.linux": "/bin/bash"
-  //},
+	// Set *default* container specific settings.json values on container create.
+	//"settings": {
+	//  "terminal.integrated.shell.linux": "/bin/bash"
+	//},
 
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	//"image": "mcr.microsoft.com/devcontainers/base:jammy"
@@ -25,7 +25,7 @@
 	"forwardPorts": [6080, 5901],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "uname -a",
+	"postCreateCommand": "apt-get update && apt-get install -y valgrind iverilog cmake",
 
 	// Configure tool-specific properties.
 	"customizations": {
